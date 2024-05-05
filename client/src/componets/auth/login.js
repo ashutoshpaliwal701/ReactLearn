@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import CatagroyContainer from "../common/catagroycontainer";
 
 const Login = () => {
 
@@ -10,6 +11,9 @@ const Login = () => {
     }
     
     return (<>
+
+        <CatagroyContainer/>
+    
         <main class="w-full mt-12 sm:mt-0">
             <div className="flex-1 overflow-hidden">
 

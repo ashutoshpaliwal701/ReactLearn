@@ -1,10 +1,12 @@
 import React from 'react';
 // import RunBanner from './script';
 // import {Helmet} from "react-helmet";
+import CatagoryContainer from "./catagroycontainer";
 
 const Home = () => {
     return (<>
         <h1>Home</h1>
+        <CatagoryContainer/>
         {/*<!-- main sections starts -->*/}
         <main className="flex flex-col gap-3 px-2 mt-2">
 

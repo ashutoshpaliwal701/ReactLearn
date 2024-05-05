@@ -1,8 +1,9 @@
 import React from "react";
+import SmallCatagoryContainer from "../common/catagroycontainersmall";
 
 const Profile = () => {
     return (<>
-
+        <SmallCatagoryContainer/>
         {/*<!-- main sections starts -->*/}
         <main className="w-full mt-12 sm:mt-0">
 

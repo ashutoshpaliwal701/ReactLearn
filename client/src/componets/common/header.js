@@ -1,8 +1,5 @@
 import React from "react";
 import {
-     BrowserRouter as Router,
-     Switch,
-     Route,
      Link
 } from "react-router-dom"
 
@@ -38,7 +35,7 @@ const Header = () =>{
 
        {/* <!-- dropdown navbar hover tabs --> */}
        <div className="userDropDownMenu hidden absolute w-60 -left-24 ml-2 top-9 bg-white shadow-2xl rounded flex-col text-sm">
-           <Link className="pl-3 py-3.5 border-b flex gap-3 items-center hover:bg-gray-50 rounded-t" to="profile.html">
+           <Link className="pl-3 py-3.5 border-b flex gap-3 items-center hover:bg-gray-50 rounded-t" to="profile">
                 <span className="material-icons md-18 text-primary-blue">account_circle</span>
                 My Profile
            </Link>
@@ -50,11 +47,11 @@ const Header = () =>{
                 <span className="material-icons md-18 text-primary-blue">add_circle</span>
                 Flipkart Plus Zone
            </Link>
-           <Link className="pl-3 py-3.5 border-b flex gap-3 items-center hover:bg-gray-50" to="orders.html">
+           <Link className="pl-3 py-3.5 border-b flex gap-3 items-center hover:bg-gray-50" to="orders">
                 <span className="material-icons md-18 text-primary-blue">shopping_bag</span>
                 Orders
            </Link>
-           <Link className="pl-3 py-3.5 border-b flex gap-3 items-center hover:bg-gray-50" to="wishlist.html">
+           <Link className="pl-3 py-3.5 border-b flex gap-3 items-center hover:bg-gray-50" to="wishlist">
                 <span className="material-icons md-18 text-primary-blue">favorite</span>
                 Wishlist
            </Link>
@@ -116,7 +113,7 @@ const Header = () =>{
         </div>
         {/* <!-- dropdown navbar hover tabs --> */}
 
-        <Link to="cart.html" className="flex items-center text-white font-medium gap-2 relative">
+        <Link to="cart" className="flex items-center text-white font-medium gap-2 relative">
             <span className="material-icons">shopping_cart</span>
             {/* <!-- badge count --> */}
             <div className="w-5 h-5 p-2 bg-red-500 text-xs rounded-full absolute -top-2 left-3 flex justify-center items-center border">
