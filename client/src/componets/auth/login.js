@@ -1,8 +1,13 @@
-import React from "react";
+import React, {useState} from "react";
 
 const Login = () => {
 
+    const [resData, setResData] = useState([]);
 
+    const senData = {
+        name : 'name', 
+        password : 'password'
+    }
     
     return (<>
         <main class="w-full mt-12 sm:mt-0">
