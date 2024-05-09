@@ -9,6 +9,7 @@ import Cart from "./componets/cart/cart";
 import Order from "./componets/products/orders";
 import Product from './componets/products/products';
 import WishList from './componets/products/wishlist';
+import NotFound from './componets/common/notFound';
 
 function App(){
   return(<>
@@ -24,6 +25,7 @@ function App(){
         <Route exact path='/orders' element={<Order/>}/>
         <Route exact path='/product' element={<Product/>}/>
         <Route exact path='/wishlist' element={<WishList/>}/>
+        <Route element={<NotFound/>}/>
       </Routes>
       <Footer/>
     </Router>

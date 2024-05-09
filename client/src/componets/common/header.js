@@ -29,7 +29,7 @@ const Header = () =>{
 
     {/* <!-- right navs --> */}
     <div className="flex items-center justify-between gap-7 relative">
-        <span className="userDropDown flex items-center text-white font-medium gap-1 cursor-pointer">Jhon
+        <span className="userDropDown flex items-center text-white font-medium gap-1 cursor-pointer">Log In
             <span className="material-icons text-sm transition-transform duration-100">expand_more</span>
         </span>
 
