@@ -1,20 +1,38 @@
 import React, {useState} from "react";
 import CatagroyContainer from "../common/catagroycontainer";
+import axios from "axios";
 
 const Login = () => {
 
-    const [resData, setResData] = useState([]);
+    const [user, setUser] = useState({
+        email : '',
+        password  : ''
+    })
 
-    const senData = {
-        name : 'name', 
-        password : 'password'
+    const handelInput = (e) =>{
+        const {name, value} = e.target;
+        setUser(prevState =>({
+            ...prevState,
+            [name] : value
+        }))
+
+    }
+
+    const submitForm = async(e) => {
+        e.preventDefault();
+        try{
+            const res = await axios.post('http://localhost:8000/login', user);
+            console.log(res);
+        }catch(err){
+            console.log(err);
+        }
     }
     
     return (<>
 
         <CatagroyContainer/>
     
-        <main class="w-full mt-12 sm:mt-0">
+        <main className="w-full mt-12 sm:mt-0">
             <div className="flex-1 overflow-hidden">
 
                 <div className="flex sm:w-4/6 sm:mt-4 m-auto mb-7 bg-white shadow-lg">
@@ -32,13 +50,13 @@ const Login = () => {
                         <div className="text-center py-10 px-14">
 
                             {/*<!-- input container -->*/}
-                            <form action="#">
+                            <form action="/" onSubmit={submitForm}>
                                 <div className="flex flex-col w-full gap-4">
 
                                     {/*<!-- email input -->*/}
                                     <div className="flex flex-col gap-1">
                                         <h2 className="text-xs text-primary-grey text-left">Enter Email/Mobile Number</h2>
-                                        <input type="email" name="" id="" placeholder="Enter Email/Mobile Number" className="py-2 outline-none border-b rounded-sm focus:border-primary-blue" required />
+                                        <input type="email" name="email" value={user.email} onChange={handelInput} id="" placeholder="Enter Email/Mobile Number" className="py-2 outline-none border-b rounded-sm focus:border-primary-blue" required />
                                         <span className="text-xxs text-red-500 font-medium text-left mt-0.5 invisible">Please enter valid Email ID/Mobile number</span>
                                     </div>
                                     {/*<!-- email input -->*/}
@@ -46,7 +64,7 @@ const Login = () => {
                                     {/*<!-- password input -->*/}
                                     <div className="flex flex-col gap-1">
                                         <h2 className="text-xs text-primary-grey text-left">Enter Password</h2>
-                                        <input type="text" name="" id="" placeholder="Enter Password" className="py-2 outline-none border-b rounded-sm focus:border-primary-blue" required />
+                                        <input type="text" name="password" value={user.password} onChange={handelInput} id="" placeholder="Enter Password" className="py-2 outline-none border-b rounded-sm focus:border-primary-blue" required />
                                         <span className="text-xxs text-red-500 font-medium text-left mt-0.5 invisible">Please enter Password</span>
                                     </div>
                                     {/*<!-- password input -->*/}
